@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/11 12:30:25 by dconza            #+#    #+#             */
+/*   Updated: 2023/10/11 12:56:31 by dconza           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_memset(int value, void *array, int len)
+void	ft_memset(void *b, int c, size_t len)
 {
 	char	*p;
 
-	p = (char *)array;
+	p = (char *)b;
 	while (len != 0)
 	{
-		p[len-1] == value;
+		p[len-1] = c;
 		len--;
 	}
-	return (array);
+	return (b);
 }
