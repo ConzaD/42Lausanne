@@ -6,31 +6,32 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:30:12 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 12:56:36 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 19:45:16 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_memmove(void *dst, const void *src, size_t len)
-{
-	int	i;
+#include "libft.h"
 
-	if (src < dst)
-	{
-		i = len;
-		while ( i > 0)
-		{
-			i--;
-			((unsigned char *)dst)[i]=((unsigned char *)src)[i];
-		}
-	}
-	else
-	{
-		i = 0;
-		while ( i > 0)
-		{
-			((unsigned char *)dst)[i]=((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return (dst);
+void    *ft_memmove(void *s1, const void *s2, size_t n)
+{
+    unsigned char    *ptr1;
+    unsigned char    *ptr2;
+
+    ptr1 = (unsigned char *)s1;
+    ptr2 = (unsigned char *)s2;
+    if (ptr2 == NULL && ptr1 == NULL)
+        return (NULL);
+    if (ptr1 < ptr2)
+    {
+        while (n--)
+            *(ptr1++) = *(ptr2++);
+    }
+    else
+    {
+        ptr1 += n;
+        ptr2 += n;
+        while (n--)
+            *(--ptr1) = *(--ptr2);
+    }
+    return (s1);
 }

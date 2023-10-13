@@ -6,13 +6,15 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:30:00 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 12:56:43 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 16:32:22 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isprint(int a)
 {
-		if((a >= 32 || a <= 126))
+		if((a >= 32 && a <= 126))
 			return (1);
 		return (0);
 }

@@ -6,11 +6,13 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:04:09 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 16:12:16 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 17:21:57 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const void *s1, void *s2, size_t n)
+#include "libft.h"
+
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	k;
 	char	*p;
@@ -19,10 +21,11 @@ int	ft_strncmp(const void *s1, void *s2, size_t n)
 	p = (char *)s1;
 	m = (char *)s2;
 	k = 0;
-	while (i < n)
+	while (k < n)
 	{
 		if (p[k] != m[k])
-			return (*(unsigned char *)p - *(unsigned char *)m);
+			return ((unsigned char )p[k] - (unsigned char )m[k]);
+		k++;
 	}
 	return (0);
 }

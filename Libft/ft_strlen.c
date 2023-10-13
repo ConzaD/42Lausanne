@@ -6,15 +6,18 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:55:41 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 12:56:09 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 16:28:37 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(const char *str)
 {
 	int	i;
 
-	while (str[i] != "\0")
+	i = 0;
+	while (str[i] != '\0')
 	{
 		i++;
 	}

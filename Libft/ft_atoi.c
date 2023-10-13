@@ -6,9 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:45:15 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 15:50:29 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 16:26:21 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

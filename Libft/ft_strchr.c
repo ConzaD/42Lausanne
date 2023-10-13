@@ -6,21 +6,21 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:34:15 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 15:38:16 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 17:15:41 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-
-	i = 0;
-
-	while ( s[i] != '\0')
+	while (*s)
 	{
-		if ( s[i] == c)
-			return ((const char *)s + i);
-		i++;
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
-	return(NULL);
+	if (c == '\0')
+		return ((char *)s);
+	return (0);
 }

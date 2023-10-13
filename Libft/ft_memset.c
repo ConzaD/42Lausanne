@@ -6,11 +6,13 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:30:25 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 12:56:31 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 16:36:09 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset(void *b, int c, size_t len)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*p;
 

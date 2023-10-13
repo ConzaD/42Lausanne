@@ -6,13 +6,15 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:29:47 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 12:56:58 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 16:31:43 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isascii(int a)
 {
-		if((a >= 0 || a <= 127))
+		if((a >= 0 && a <= 127))
 			return (1);
 		return (0);
 }

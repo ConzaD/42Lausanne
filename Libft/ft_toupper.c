@@ -6,9 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:44:07 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/11 15:44:31 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/13 16:25:38 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int i)
 {
