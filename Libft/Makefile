@@ -21,6 +21,17 @@ files 	   = ft_strlen \
 			 ft_memcmp \
 			 ft_strnstr \
 			 ft_atoi \
+			 ft_strdup \
+			 ft_calloc \
+			 ft_putchar_fd \
+			 ft_putstr_fd \
+			 ft_putendl_fd \
+			 ft_putnbr_fd \
+			 ft_itoa \
+			 ft_striteri \
+			 ft_itoa \
+			 ft_strmapi \
+			 ft_substr \
 
 Compiler	= gcc
 
