@@ -32,6 +32,7 @@ files 	   = ft_strlen \
 			 ft_itoa \
 			 ft_strmapi \
 			 ft_substr \
+			 ft_strjoin \
 
 Compiler	= gcc
 
