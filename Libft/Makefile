@@ -33,6 +33,8 @@ files 	   = ft_strlen \
 			 ft_strmapi \
 			 ft_substr \
 			 ft_strjoin \
+			 ft_split \
+			 ft_strtrim \
 
 Compiler	= gcc
 

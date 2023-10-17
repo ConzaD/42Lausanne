@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:51:54 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/16 12:09:18 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/17 20:14:52 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static unsigned int	ft_number_size(int number)
 
 char	*ft_itoa(int n)
 {
-	char		*string;
+	char			*string;
 	unsigned int	number;
 	unsigned int	length;
 

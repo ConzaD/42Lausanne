@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:34:15 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/13 17:15:41 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/17 20:44:58 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s);
 	return (0);
 }

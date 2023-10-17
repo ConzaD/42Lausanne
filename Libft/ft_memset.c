@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:30:25 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/13 16:36:09 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/17 20:22:49 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	p = (char *)b;
 	while (len != 0)
 	{
-		p[len-1] = c;
+		p[len - 1] = c;
 		len--;
 	}
 	return (b);
