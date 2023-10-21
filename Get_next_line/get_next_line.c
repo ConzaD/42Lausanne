@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:06:18 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/21 13:22:00 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/21 19:36:51 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ static char	*function_name(int fd, char *buf, char *backup)
 	{
 		read_line = read(fd, buf, BUFFER_SIZE);
 		if (read_line == -1)
-			return (0);
+			return (NULL);
 		else if (read_line == 0)
 			break ;
 		buf[read_line] = '\0';
 		if (!backup)
 			backup = ft_strdup("");
+		if (!backup)
+			return (NULL);
 		char_temp = backup;
 		backup = ft_strjoin(char_temp, buf);
 		free(char_temp);
@@ -49,6 +51,8 @@ static char	*extract(char *line)
 	if (line[count] == '\0' || line[1] == '\0')
 		return (0);
 	backup = ft_substr(line, count + 1, ft_strlen(line) - count);
+	if (!backup)
+		return (NULL);
 	if (*backup == '\0')
 	{
 		free(backup);
@@ -64,8 +68,13 @@ char	*get_next_line(int fd)
 	char		*buf;
 	static char	*backup;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if ((read(fd, NULL, 0) == -1))
+	{
+		if (backup)
+			free(backup);
+		backup = NULL;
 		return (0);
+	}
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (0);
