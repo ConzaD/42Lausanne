@@ -1,38 +1,28 @@
-Library		= libftprintf
-
-files 	   = ft_strlen \
-			 ft_atoi \
-			 ft_putchar_fd \
-			 ft_putstr_fd \
-			 ft_putnbr_fd \
-			 ft_itoa \
-
-
-Compiler	= gcc
-
-CmpFlags	= -Wall -Wextra -Werror
-
-OUTN	= $(Library).a
-
-CFILES	= $(files:%=%.c)
-
-OFILES	= $(files:%=%.o)
-
 NAME	= libftprintf.a
 
-$(NAME):
-	$(Compiler) $(CmpFlags) -c $(CFILES) -I./
-	ar rcs libftprintf.a $(OFILES)
+SRCS	= ./sources/ft_printf.c \
+	   	./sources/ft_utilsone.c \
+		./sources/ft_utilstwo.c \
 
-all: $(NAME)
+OBJS	= $(SRCS:.c=.o)
+
+CC	= gcc
+
+RM	= rm -f
+
+CFLAGS	= -Wall -Wextra -Werror
+
+all:	$(NAME)
+
+$(NAME):	$(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f $(NAME)
-	rm -f $(OFILES)
+			$(RM) $(OBJS)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:		clean
+			$(RM) $(NAME)
 
-re: fclean all
+re:			fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY:		all clean fclean re
