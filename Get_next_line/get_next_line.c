@@ -6,13 +6,13 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:06:18 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/21 19:36:51 by dconza           ###   ########.fr       */
+/*   Updated: 2023/11/23 11:17:18 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*function_name(int fd, char *buf, char *backup)
+static char	*read_file(int fd, char *buf, char *backup)
 {
 	int		read_line;
 	char	*char_temp;
@@ -40,6 +40,10 @@ static char	*function_name(int fd, char *buf, char *backup)
 	return (backup);
 }
 
+/*Le principe de cette fonction est de lire
+les donnees du fichier dans un tampon les concatene
+et sauvegarde jusqu'a la fin du fichier ou u nsuat de ligne */
+
 static char	*extract(char *line)
 {
 	size_t	count;
@@ -62,6 +66,10 @@ static char	*extract(char *line)
 	return (backup);
 }
 
+/*cette fonction extrait tout simplement des
+sous chaines de caractere de la chaine principale
+a chaque saut de ligne ou a la fin*/
+
 char	*get_next_line(int fd)
 {
 	char		*line;
@@ -78,7 +86,7 @@ char	*get_next_line(int fd)
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (0);
-	line = function_name(fd, buf, backup);
+	line = read_file(fd, buf, backup);
 	free(buf);
 	buf = NULL;
 	if (!line)

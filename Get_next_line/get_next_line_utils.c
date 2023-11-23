@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:06:51 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/21 19:25:22 by dconza           ###   ########.fr       */
+/*   Updated: 2023/11/23 11:18:07 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
+/*retourne une chaine de caractere a partir du
+caractere donnee d'une chaine de caractere.*/
+
 int	ft_strlen(const char *str)
 {
 	int	i;
@@ -45,6 +48,8 @@ int	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+
+/*calcul la longueur d'une chaine de caractere*/
 
 char	*ft_strchr(const char *s, int i)
 {
@@ -58,6 +63,9 @@ char	*ft_strchr(const char *s, int i)
 		return ((char *)s);
 	return (0);
 }
+
+/*retourne un pointeur de la premiere occurence
+d'un caractere dans une chaine de caractere.*/
 
 char	*ft_strdup(const char *s)
 {
@@ -78,6 +86,8 @@ char	*ft_strdup(const char *s)
 	str[i] = '\0';
 	return (str);
 }
+
+/*Duplique une chaine de caractere.*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -103,3 +113,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i + j] = '\0';
 	return (str);
 }
+
+/*lie entre elles 2 chaines de caracteres.*/
