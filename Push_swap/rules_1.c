@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   rules_1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 12:06:48 by dconza            #+#    #+#             */
-/*   Updated: 2023/11/23 11:28:10 by dconza           ###   ########.fr       */
+/*   Created: 2023/11/23 19:30:07 by dconza            #+#    #+#             */
+/*   Updated: 2023/11/23 20:10:21 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "push_swap.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 666
-# endif
+static void	push(t_stack **src, t_stack **dest)
+{
+	t_stack	*tmp;
 
-# include <stdlib.h>
-# include <unistd.h>
+	if (*src == NULL)
+		return ;
+	tmp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp;
+}
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-int		ft_strlen(const char *str);
-char	*ft_strchr(const char *s, int i);
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*get_next_line(int fd);
+void	do_pa(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_b, stack_a);
+	ft_putstr("pa\n");
+}
 
-#endif
+void	do_pb(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_a, stack_b);
+	ft_putstr("pb\n");
+}

@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utilstwo.c                                      :+:      :+:    :+:   */
+/*   rules_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 14:51:25 by dconza            #+#    #+#             */
-/*   Updated: 2023/11/23 11:19:52 by dconza           ###   ########.fr       */
+/*   Created: 2023/11/23 19:30:21 by dconza            #+#    #+#             */
+/*   Updated: 2023/11/23 20:13:41 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "push_swap.h"
 
-void	ft_putcharacter_length(char character, int *length)
+static void	swap(t_stack *stack)
 {
-	write(1, &character, 1);
-	(*length)++;
-}
+	int	tmp;
 
-void	ft_string(char *args, int *length)
-{
-	size_t	i;
-
-	i = 0;
-	if (!args)
-	{
-		write(1, "(null)", 6);
-		(*length) += 6;
+	if (stack == NULL)
 		return ;
-	}
-	while (args[i] != '\0')
-	{
-		ft_putcharacter_length(args[i], length);
-		i++;
-	}
+	tmp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp;
 }
+
+void		sa(t_stack **stack_a){
+	swap(*stack_a);
+	ft_putstr("sa\n");
+};
+
+void		sb(t_stack **stack_b){
+	swap(*stack_b);
+	ft_putstr("sb\n");
+};
+
+void		ss(t_stack **stack_a, t_stack **stack_b){
+	swap(*stack_a);
+	swap(*stack_b);
+	ft_putstr("ss\n");
+};

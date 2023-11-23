@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:29:43 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/25 15:09:18 by dconza           ###   ########.fr       */
+/*   Updated: 2023/10/26 16:42:51 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_unsigned_int(unsigned int u, int *length)
 {
 	if (u >= 10)
 		ft_unsigned_int(u / 10, length);
-	write(1, &("0123456789")[u % 10], 1);
+	ft_putcharacter_length(u % 10 + '0', length);
 }
 
 void	ft_pointer(size_t pointer, int *length)

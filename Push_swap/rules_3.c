@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   rules_3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 12:06:48 by dconza            #+#    #+#             */
-/*   Updated: 2023/11/23 11:28:10 by dconza           ###   ########.fr       */
+/*   Created: 2023/11/23 20:08:02 by dconza            #+#    #+#             */
+/*   Updated: 2023/11/23 20:09:17 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "push_swap.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 666
-# endif
+void		ra(t_stack **stack_a){
 
-# include <stdlib.h>
-# include <unistd.h>
+};
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-int		ft_strlen(const char *str);
-char	*ft_strchr(const char *s, int i);
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*get_next_line(int fd);
+void		rb(t_stack **stack_b){
 
-#endif
+};
+
+void		rr(t_stack **stack_a, t_stack **stack_b){
+
+};
