@@ -6,20 +6,41 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:30:32 by dconza            #+#    #+#             */
-/*   Updated: 2023/11/23 20:09:11 by dconza           ###   ########.fr       */
+/*   Updated: 2023/11/24 16:36:46 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		rrr(t_stack **stack_a, t_stack **stack_b){
+static void	rev_rotate(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*end;
+	t_stack	*before_end;
 
-};
+	end = get_stack_bottom(*stack);
+	before_end = get_stack_before_bottom(*stack);
+	tmp = *stack;
+	*stack = end;
+	(*stack)->next = tmp;
+	before_end->next = NULL;
+}
 
-void		rra(t_stack **stack_a){
+void	do_rra(t_stack **stack_a)
+{
+	rev_rotate(stack_a);
+	ft_putstr("rra\n");
+}
 
-};
+void	do_rrb(t_stack **stack_b)
+{
+	rev_rotate(stack_b);
+	ft_putstr("rrb\n");
+}
 
-void		rrb(t_stack **stack_b){
-
-};
+void	do_rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	rev_rotate(stack_a);
+	rev_rotate(stack_b);
+	ft_putstr("rrr\n");
+}
