@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:30:32 by dconza            #+#    #+#             */
-/*   Updated: 2023/11/24 16:36:46 by dconza           ###   ########.fr       */
+/*   Updated: 2023/11/24 17:50:17 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ static void	rev_rotate(t_stack **stack)
 	before_end->next = NULL;
 }
 
-void	do_rra(t_stack **stack_a)
+void	rra(t_stack **stack_a)
 {
 	rev_rotate(stack_a);
 	ft_putstr("rra\n");
 }
 
-void	do_rrb(t_stack **stack_b)
+void	rrb(t_stack **stack_b)
 {
 	rev_rotate(stack_b);
 	ft_putstr("rrb\n");
 }
 
-void	do_rrr(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rev_rotate(stack_a);
 	rev_rotate(stack_b);
