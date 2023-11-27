@@ -6,37 +6,33 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:54:58 by dconza            #+#    #+#             */
-/*   Updated: 2023/11/27 10:52:36 by dconza           ###   ########.fr       */
+/*   Updated: 2023/11/27 11:30:42 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    fill_stack_b_first(t_stack **stack_a, t_stack **stack_b)
+void	ft_fill_b(t_stack **stack_a, t_stack **stack_b)
 {
-    pb(stack_a, stack_b);
-    pb(stack_a, stack_b);
-    if (stack_b < (*stack_b)->next)
-        rb(stack_b);   
-};
+	int		i;
+	t_stack	*tmp;
 
-void    fill_stack_b_second(t_stack **stack_a, t_stack **stack_b)
-{
-    int tmp;
-
-    pb(stack_a, stack_b);
-    tmp = (*stack_b)->next;
-    if (stack_b < tmp)
-    {
-
-    }
-
-};
-
-void    sort_stack_a(t_stack **stack_a, t_stack **stack_b)
-{
-    while (stack_b)
-    {
-        /*i guess work*/
-    }
+	while (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
+	{
+		tmp = *stack_a;
+		i = ft_rotate_type_ab(*stack_a, *stack_b);
+		while (i >= 0)
+		{
+			if (i == calculate_rotation_one(*stack_a, *stack_b, tmp->nbr))
+				i = rotation_one(stack_a, stack_b, tmp->nbr, 'a');
+			else if (i == calculate_rotation_two(*stack_a, *stack_b, tmp->nbr))
+				i = rotation_two(stack_a, stack_b, tmp->nbr, 'a');
+			else if (i == calculate_rotation_one_bis(*stack_a, *stack_b, tmp->nbr))
+				i = rotation_one_bis(stack_a, stack_b, tmp->nbr, 'a');
+			else if (i == calculate_rotation_two_bis(*stack_a, *stack_b, tmp->nbr))
+				i = rotation_two_bis(stack_a, stack_b, tmp->nbr, 'a');
+			else
+				tmp = tmp->next;
+		}
+	}
 }

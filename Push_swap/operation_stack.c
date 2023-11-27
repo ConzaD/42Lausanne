@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_stac.c                                   :+:      :+:    :+:   */
+/*   operation_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 16:32:13 by dconza            #+#    #+#             */
-/*   Updated: 2023/11/24 16:34:52 by dconza           ###   ########.fr       */
+/*   Updated: 2023/11/27 11:34:47 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_stack	*stack_new(int value)
 	return (new);
 }
 
-void	stack_add_bottom(t_stack **stack, t_stack *new)
+void	stack_add_bottom(t_stack **stack, t_stack *newest)
 {
 	t_stack	*end;
 
