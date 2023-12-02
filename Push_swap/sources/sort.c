@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:54:58 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 13:42:04 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/02 14:17:56 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	ft_fill_b(t_stack **stack_a, t_stack **stack_b)
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == calculate_rotation_one(*stack_a, *stack_b, tmp->nbr))
-				i = rotation_one(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == calculate_rotation_two(*stack_a, *stack_b, tmp->nbr))
-				i = rotation_two(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == calculate_rotation_one_bis(*stack_a, *stack_b, tmp->nbr))
-				i = rotation_one_bis(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == calculate_rotation_two_bis(*stack_a, *stack_b, tmp->nbr))
-				i = rotation_two_bis(stack_a, stack_b, tmp->nbr, 'a');
+			if (i == calculate_rotation_one(*stack_a, *stack_b, tmp->value))
+				i = rotation_one(stack_a, stack_b, tmp->value, 'a');
+			else if (i == calculate_rotation_two(*stack_a, *stack_b, tmp->value))
+				i = rotation_two(stack_a, stack_b, tmp->value, 'a');
+			else if (i == calculate_rotation_three(*stack_a, *stack_b, tmp->value))
+				i = rotation_three(stack_a, stack_b, tmp->value, 'a');
+			else if (i == calculate_rotation_four(*stack_a, *stack_b, tmp->value))
+				i = rotation_four(stack_a, stack_b, tmp->value, 'a');
 			else
 				tmp = tmp->next;
 		}
@@ -64,14 +64,14 @@ t_stack	**ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 		i = ft_rotate_type_ba(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb_a(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (i == ft_case_rarrb_a(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (i == ft_case_rrarb_a(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'b');
+			if (i == calculate_rotation_one(*stack_a, *stack_b, tmp->value))
+				i = rotation_one(stack_a, stack_b, tmp->value, 'b');
+			else if (i == calculate_rotation_three(*stack_a, *stack_b, tmp->value))
+				i = rotation_three(stack_a, stack_b, tmp->value, 'b');
+			else if (i == calculate_rotation_two(*stack_a, *stack_b, tmp->value))
+				i = rotation_two(stack_a, stack_b, tmp->value, 'b');
+			else if (i == calculate_rotation_four(*stack_a, *stack_b, tmp->value))
+				i = rotation_four(stack_a, stack_b, tmp->value, 'b');
 			else
 				tmp = tmp->next;
 		}
@@ -94,12 +94,12 @@ void	ft_sort(t_stack **stack_a)
 		i = ft_find_index(*stack_a, ft_min(*stack_a));
 		if (i < ft_lstsize(*stack_a) - i)
 		{
-			while ((*stack_a)->nbr != ft_min(*stack_a))
+			while ((*stack_a)->value != ft_min(*stack_a))
 				ft_ra(stack_a, 0);
 		}
 		else
 		{
-			while ((*stack_a)->nbr != ft_min(*stack_a))
+			while ((*stack_a)->value != ft_min(*stack_a))
 				ft_rra(stack_a, 0);
 		}
 	}

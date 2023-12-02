@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:05:23 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 13:41:49 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/02 13:56:30 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ int	ft_lstsize(t_stack *lst)
 
 void	ft_sort_three(t_stack **stack_a)
 {
-	if (ft_min(*stack_a) == (*stack_a)->nbr)
+	if (ft_min(*stack_a) == (*stack_a)->value)
 	{
 		ft_rra(stack_a, 0);
 		ft_sa(stack_a, 0);
 	}
-	else if (ft_max(*stack_a) == (*stack_a)->nbr)
+	else if (ft_max(*stack_a) == (*stack_a)->value)
 	{
 		ft_ra(stack_a, 0);
 		if (!ft_checksorted(*stack_a))

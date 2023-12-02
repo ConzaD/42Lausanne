@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:28:30 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 13:41:14 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/02 13:54:36 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	ft_checksorted(t_stack *stack_a)
 {
 	int	i;
 
-	i = stack_a->nbr;
+	i = stack_a->value;
 	while (stack_a)
 	{
-		if (i > stack_a->nbr)
+		if (i > stack_a->value)
 			return (0);
-		i = stack_a->nbr;
+		i = stack_a->value;
 		stack_a = stack_a->next;
 	}
 	return (1);
@@ -71,7 +71,7 @@ int	ft_checkdup(t_stack *a)
 		tmp = a->next;
 		while (tmp)
 		{
-			if (a->nbr == tmp->nbr)
+			if (a->value == tmp->value)
 				return (1);
 			tmp = tmp->next;
 		}

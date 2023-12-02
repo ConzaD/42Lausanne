@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 16:32:13 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 13:41:26 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/02 14:17:32 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_free(t_stack **lst)
 	while (*lst)
 	{
 		tmp = (*lst)->next;
-		(*lst)->nbr = 0;
+		(*lst)->value = 0;
 		free(*lst);
 		*lst = tmp;
 	}
@@ -33,17 +33,17 @@ int	ft_rotate_type_ba(t_stack *a, t_stack *b)
 	t_stack	*tmp;
 
 	tmp = b;
-	i = ft_case_rrarrb_a(a, b, b->nbr);
+	i = calculate_rotation_two(a, b, b->value);
 	while (tmp)
 	{
-		if (i > ft_case_rarb_a(a, b, tmp->nbr))
-			i = ft_case_rarb_a(a, b, tmp->nbr);
-		if (i > ft_case_rrarrb_a(a, b, tmp->nbr))
-			i = ft_case_rrarrb_a(a, b, tmp->nbr);
-		if (i > ft_case_rarrb_a(a, b, tmp->nbr))
-			i = ft_case_rarrb_a(a, b, tmp->nbr);
-		if (i > ft_case_rrarb_a(a, b, tmp->nbr))
-			i = ft_case_rrarb_a(a, b, tmp->nbr);
+		if (i > calculate_rotation_one(a, b, tmp->value))
+			i = calculate_rotation_one(a, b, tmp->value);
+		if (i > calculate_rotation_two(a, b, tmp->value))
+			i = calculate_rotation_two(a, b, tmp->value);
+		if (i > calculate_rotation_three(a, b, tmp->value))
+			i = calculate_rotation_three(a, b, tmp->value);
+		if (i > calculate_rotation_four(a, b, tmp->value))
+			i = calculate_rotation_four(a, b, tmp->value);
 		tmp = tmp->next;
 	}
 	return (i);
@@ -55,17 +55,17 @@ int	ft_rotate_type_ab(t_stack *a, t_stack *b)
 	t_stack	*tmp;
 
 	tmp = a;
-	i = ft_case_rrarrb(a, b, a->nbr);
+	i = calculate_rotation_two(a, b, a->value);
 	while (tmp)
 	{
-		if (i > ft_case_rarb(a, b, tmp->nbr))
-			i = ft_case_rarb(a, b, tmp->nbr);
-		if (i > ft_case_rrarrb(a, b, tmp->nbr))
-			i = ft_case_rrarrb(a, b, tmp->nbr);
-		if (i > ft_case_rarrb(a, b, tmp->nbr))
-			i = ft_case_rarrb(a, b, tmp->nbr);
-		if (i > ft_case_rrarb(a, b, tmp->nbr))
-			i = ft_case_rrarb(a, b, tmp->nbr);
+		if (i > calculate_rotation_one(a, b, tmp->value))
+			i = calculate_rotation_one(a, b, tmp->value);
+		if (i > calculate_rotation_two(a, b, tmp->value))
+			i = calculate_rotation_two(a, b, tmp->value);
+		if (i > calculate_rotation_three(a, b, tmp->value))
+			i = calculate_rotation_three(a, b, tmp->value);
+		if (i > calculate_rotation_four(a, b, tmp->value))
+			i = calculate_rotation_four(a, b, tmp->value);
 		tmp = tmp->next;
 	}
 	return (i);
@@ -78,7 +78,7 @@ t_stack	*ft_stack_new(int content)
 	new = malloc(sizeof (t_stack));
 	if (!new)
 		ft_error();
-	new->nbr = content;
+	new->value = content;
 	new->next = NULL;
 	return (new);
 }
