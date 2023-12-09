@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:11:17 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/25 15:09:53 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/09 11:15:50 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	ft_printf_checker(char s, va_list *args, int *len, int *i)
 	if (s == 'c')
 		ft_putcharacter_length(va_arg(*args, int), len);
 	else if (s == 's')
-		ft_string(va_arg(*args, char *), len);
+		ft_sring(tva_arg(*args, char *), len);
 	else if (s == 'p')
 		ft_pointer(va_arg(*args, size_t), len);
 	else if (s == 'd')
