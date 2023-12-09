@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MAKEFILE                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 12:20:25 by dconza            #+#    #+#              #
-#    Updated: 2023/12/02 13:47:36 by dconza           ###   ########.fr        #
+#    Updated: 2023/12/09 11:33:47 by dconza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRC_2 =	sources/checkeur.c \
 		sources/rules_2.c \
 		sources/rules_3.c \
 		sources/rules_4.c \
-		sources/operations_3.c \
 		sources/solver_utils.c \
 		sources/solver_utils_bis.c \
 		sources/solver.c \

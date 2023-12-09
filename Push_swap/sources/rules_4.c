@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:30:32 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 13:41:45 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/09 11:32:28 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static void	rev_rotate(t_stack **stack)
 	t_stack	*tmp;
 	int		i;
 
-	if (!*a || !(*a)->next)
+	if (!*stack || !(*stack)->next)
 		return ;
 	i = 0;
-	tmp = *a;
-	while ((*a)->next)
+	tmp = *stack;
+	while ((*stack)->next)
 	{
-		*a = (*a)->next;
+		*stack = (*stack)->next;
 		i++;
 	}
-	(*a)->next = tmp;
+	(*stack)->next = tmp;
 	while (i > 1)
 	{
 		tmp = tmp->next;

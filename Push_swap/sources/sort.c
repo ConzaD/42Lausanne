@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:54:58 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 14:17:56 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/09 11:38:06 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 
 	stack_b = NULL;
 	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
-		ft_pb(stack_a, &stack_b, 0);
+		pb(stack_a, &stack_b, 0);
 	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
-		ft_pb(stack_a, &stack_b, 0);
+		pb(stack_a, &stack_b, 0);
 	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
 		ft_sort_b_till_3(stack_a, &stack_b);
 	if (!ft_checksorted(*stack_a))
@@ -86,7 +86,7 @@ void	ft_sort(t_stack **stack_a)
 
 	stack_b = NULL;
 	if (ft_lstsize(*stack_a) == 2)
-		ft_sa(stack_a, 0);
+		sa(stack_a, 0);
 	else
 	{
 		stack_b = ft_sort_b(stack_a);
@@ -95,12 +95,19 @@ void	ft_sort(t_stack **stack_a)
 		if (i < ft_lstsize(*stack_a) - i)
 		{
 			while ((*stack_a)->value != ft_min(*stack_a))
-				ft_ra(stack_a, 0);
+				ra(stack_a, 0);
 		}
 		else
 		{
 			while ((*stack_a)->value != ft_min(*stack_a))
-				ft_rra(stack_a, 0);
+				rra(stack_a, 0);
 		}
 	}
+}
+
+int	ft_isdigit(int c)
+{
+	if (c > 47 && c < 58)
+		return (1);
+	return (0);
 }

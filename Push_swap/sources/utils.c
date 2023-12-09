@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 20:06:20 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 13:57:28 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/02 14:28:05 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ long int	ft_atoi(const char *str)
 		isneg *= -1;
 		i++;
 	}
-	while (is_digit(str[i]))
+	while (ft_isdigit(str[i]))
 	{
 		nb = (nb * 10) + (str[i] - '0');
 		i++;

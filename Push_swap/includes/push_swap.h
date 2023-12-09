@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:19:30 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 14:09:09 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/09 11:25:07 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_stack
 static void	push(t_stack **src, t_stack **dest);
 void		pa(t_stack **stack_a, t_stack **stack_b, int j);
 void		pb(t_stack **stack_a, t_stack **stack_b, int j);
-static void	swap(t_stack *stack);
+static void	swap(t_stack **stack);
 void		sa(t_stack **stack_a, int j);
 void		sb(t_stack **stack_b, int j);
 void		ss(t_stack **stack_a, t_stack **stack_b, int j);
@@ -89,5 +89,15 @@ static char	*word_dup(const char *str, int start, int finish);
 char	**ft_split(char const *s, char c);
 void	ft_freestr(char **lst);
 t_stack	*ft_parse_args_quoted(char **argv);
+
+t_stack	*ft_sub_process(char **argv);
+t_stack	*ft_process(int argc, char **argv);
+int	ft_atoi2(const char *str);
+int	ft_isdigit(int c);
+void	ft_add_back(t_stack **stack, t_stack *stack_new);
+int	check_error(char **argv, int i, int j);
+int	sign(int c);
+int	digit(int c);
+int	space(int c);
 
 #endif
