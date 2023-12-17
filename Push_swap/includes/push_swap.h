@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:19:30 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/09 11:25:07 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/17 19:46:48 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ int		ft_rotate_type_ba(t_stack *a, t_stack *b);
 int		ft_rotate_type_ab(t_stack *a, t_stack *b);
 t_stack	*ft_stack_new(int content);
 
-long int	ft_atoi(const char *str);
 void		ft_putstr(char *str);
 void		ft_error(void);
 void		list_args(char **argv, t_stack **stack_a);
@@ -90,14 +89,15 @@ char	**ft_split(char const *s, char c);
 void	ft_freestr(char **lst);
 t_stack	*ft_parse_args_quoted(char **argv);
 
+int		ft_atoi2(const char *str);
+int		ft_isdigit(int c);
+void	ft_add_back(t_stack **stack, t_stack *stack_new);
+int		check_error(char **argv, int i, int j);
+int		sign(int c);
+int		digit(int c);
+int		space(int c);
+int		ft_strlen(const char *str);
 t_stack	*ft_sub_process(char **argv);
 t_stack	*ft_process(int argc, char **argv);
-int	ft_atoi2(const char *str);
-int	ft_isdigit(int c);
-void	ft_add_back(t_stack **stack, t_stack *stack_new);
-int	check_error(char **argv, int i, int j);
-int	sign(int c);
-int	digit(int c);
-int	space(int c);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 12:20:25 by dconza            #+#    #+#              #
-#    Updated: 2023/12/09 11:33:47 by dconza           ###   ########.fr        #
+#    Updated: 2023/12/17 19:49:56 by dconza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ SRC_2 =	sources/checkeur.c \
 		sources/ft_add.c \
 		sources/function_rotate.c \
 		sources/operation_stack.c \
-		sources/push_swap.c \
 		sources/rules_1.c \
 		sources/rules_2.c \
 		sources/rules_3.c \
@@ -36,6 +35,7 @@ SRC_2 =	sources/checkeur.c \
 		sources/sort.c \
 		sources/utils.c \
 		sources/utils_bis.c \
+		sources/test.c \
 
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}

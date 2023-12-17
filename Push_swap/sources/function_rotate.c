@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:14:39 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 13:41:22 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/17 19:22:38 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	rotation_two(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
-int	rotation_one_bis(t_stack **a, t_stack **b, int c, char s)
+int	rotation_four(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
 	{
@@ -83,7 +83,7 @@ int	rotation_one_bis(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
-int	rotation_two_bis(t_stack **a, t_stack **b, int c, char s)
+int	rotation_three(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
 	{

@@ -6,34 +6,39 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 20:06:20 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/02 14:28:05 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/17 19:35:36 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-long int	ft_atoi(const char *str)
+int	ft_atoi2(const char *str)
 {
-	long int	nb;
-	int			isneg;
-	int			i;
+	int				mod;
+	long long int	i;
 
-	nb = 0;
-	isneg = 1;
 	i = 0;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
+	mod = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
+		|| *str == '\v' || *str == '\r')
+		str++;
+	if (*str == '-')
 	{
-		isneg *= -1;
-		i++;
+		mod = -1;
+		str++;
 	}
-	while (ft_isdigit(str[i]))
+	else if (*str == '+')
+		str++;
+	while (*str)
 	{
-		nb = (nb * 10) + (str[i] - '0');
-		i++;
+		if (!ft_isdigit(*str))
+			ft_error();
+		i = i * 10 + (*str - 48);
+		str++;
 	}
-	return (nb * isneg);
+	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
+		ft_error();
+	return (mod * i);
 }
 
 void	ft_putstr(char *str)
@@ -61,7 +66,7 @@ void	list_args(char **argv, t_stack **stack_a)
 	i = 1;
 	while (argv[i] != NULL)
 	{
-		ft_add_back(stack_a, ft_stack_new(ft_atoi(argv[i])));
+		ft_add_back(stack_a, ft_stack_new(ft_atoi2(argv[i])));
 		i++;
 	}
 }

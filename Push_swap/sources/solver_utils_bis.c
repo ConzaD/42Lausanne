@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:05:23 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/09 11:36:30 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/17 18:48:45 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,16 @@ void	ft_sort_three(t_stack **stack_a)
 		else
 			sa(stack_a, 0);
 	}
+}
+
+int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
