@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:54:58 by dconza            #+#    #+#             */
-/*   Updated: 2023/12/09 11:38:06 by dconza           ###   ########.fr       */
+/*   Updated: 2023/12/17 18:47:01 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
 		pb(stack_a, &stack_b, 0);
 	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
-		ft_sort_b_till_3(stack_a, &stack_b);
+		ft_fill_b(stack_a, &stack_b);
 	if (!ft_checksorted(*stack_a))
 		ft_sort_three(stack_a);
 	return (stack_b);
