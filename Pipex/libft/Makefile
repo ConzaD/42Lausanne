@@ -35,6 +35,7 @@ files 	   = ft_strlen \
 			 ft_strjoin \
 			 ft_split \
 			 ft_strtrim \
+			 ft_strcmp \
 
 Compiler	= gcc
 
