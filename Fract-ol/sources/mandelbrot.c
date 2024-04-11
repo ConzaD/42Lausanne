@@ -6,9 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 19:42:30 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/11 15:59:08 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/11 16:16:27 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "fractol.h"
 
 int	mandelbrot(double cr, double ci)
 {
