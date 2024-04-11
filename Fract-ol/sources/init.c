@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 19:42:30 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/11 15:59:08 by dconza           ###   ########.fr       */
+/*   Created: 2024/04/11 16:11:03 by dconza            #+#    #+#             */
+/*   Updated: 2024/04/11 16:11:33 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	mandelbrot(double cr, double ci)
-{
-	int		n;
-	double	zr;
-	double	zi;
-	double	tmp;
+#include "../includes/fractol.h"
 
-	zr = 0;
-	zi = 0;
-	n = 0;
-	while (n < MAX_ITERATIONS)
-	{
-		if ((zr * zr + zi * zi) > 4.0)
-			break ;
-		tmp = 2 * zr * zi + ci;
-		zr = zr * zr - zi * zi + cr;
-		zi = tmp;
-		n++;
-	}
-	return (n);
+void	clean_init(t_fractol *f)
+{
+	f->mlx = NULL;
+	f->win = NULL;
+	f->img = NULL;
+	f->buf = NULL;
+	f->set = -1;
+	f->min_r = 0;
+	f->max_r = 0;
+	f->min_i = 0;
+	f->max_i = 0;
+	f->kr = 0;
+	f->ki = 0;
+	f->sx = 0;
+	f->rx = 0;
+	f->fx = 0;
+	f->palette = NULL;
+	f->color_pattern = -1;
+	f->color = 0;
 }

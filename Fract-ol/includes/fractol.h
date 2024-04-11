@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:48:47 by dconza            #+#    #+#             */
-/*   Updated: 2024/01/12 19:39:12 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/11 16:08:33 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,16 @@ typedef struct s_fractol
 	int		color_pattern;
 	int		color;
 }	t_fractol;
+
+
+
+//drawing
+int	julia_shift(int x, int y, t_fractol *f);
+
+//schema
+int	mandelbrot(double cr, double ci);
+int	julia(t_fractol *f, double zr, double zi);
+
+//execution
+int	keyboard_exec(int keycode, t_fractol *mlx);
+int	mouse_exec(int keycode, int x, int y, t_fractol *mlx);
