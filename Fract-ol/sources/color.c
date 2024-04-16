@@ -6,11 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:43:15 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 09:57:09 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:32:18 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static void	color_shift_special(t_fractol *f)
 {

@@ -6,12 +6,12 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:47:31 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 09:55:30 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:32:22 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "keys.h"
-#include "fractol.h"
+#include "../includes/keys.h"
+#include "../includes/fractol.h"
 
 static void	zoom(t_fractol *f, double zoom)
 {

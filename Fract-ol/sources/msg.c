@@ -6,11 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:44:35 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 09:52:08 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:32:36 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 
 void print_fractal_options(void)

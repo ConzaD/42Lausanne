@@ -6,11 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:12:40 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 09:44:05 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:32:41 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static int	skip_space_sign_0x(char *color)
 {

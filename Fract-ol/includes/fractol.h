@@ -6,15 +6,15 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:48:47 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 10:15:31 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:40:53 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "mlx.h"
-# include "libft.h"
+# include "../minilibx/mlx.h"
+# include "../libft/libft.h"
 # include "keys.h"
 # include <stdio.h>
 # include <math.h>
@@ -103,9 +103,15 @@ static void	set_pixel_color(t_fractol *f, int x, int y, int color);
 static int	calculate_fractal(t_fractol *f, double pr, double pi);
 void	render(t_fractol *f);
 
-//fractol
-static int	type_cmp(char *av, char *str, char c, char n);
-static void	get_set(t_fractol *f, char **av);
-static void	get_julia_starting_values(t_fractol *f, int ac, char **av);
-static void	handle_args(t_fractol *f, int ac, char **av);
-int	main(int ac, char **av);
+//striped color
+static void	fill_color_stripe(t_fractol *f, int color, int stripe);
+int	get_percent_color(int color, double percent);
+void	set_color_zebra(t_fractol *f, int color);
+void	set_color_triad(t_fractol *f, int color);
+void	set_color_tetra(t_fractol *f, int color);
+
+//more color
+void	set_color_opposites(t_fractol *f, int color);
+void	set_color_contrasted(t_fractol *f, int color);
+void	set_color_graphic(t_fractol *f, int color);
+#endif

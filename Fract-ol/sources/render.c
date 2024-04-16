@@ -6,11 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:16:08 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 09:39:58 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:32:46 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static void	set_pixel_color(t_fractol *f, int x, int y, int color)
 {

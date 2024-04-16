@@ -6,7 +6,7 @@
 #    By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:34:34 by dconza            #+#    #+#              #
-#    Updated: 2024/04/16 10:03:55 by dconza           ###   ########.fr        #
+#    Updated: 2024/04/16 10:41:34 by dconza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,75 +14,49 @@ NAME	= fractol
 
 CC		= gcc
 CFLAGS	= -Werror -Wextra -Wall
+MLX	= minilibx/
+LIBFT	= libft/
+OBJ_DIR = obj/
+SRC_DIR = srcs/
 
-MLX_PATH	= minilibx/
-MLX_NAME	= libmlx.a
-MLX			= $(MLX_PATH)$(MLX_NAME)
+SRC			=	sources/init.c \
+				sources/exit.c \
+				sources/execution.c \
+				sources/render.c \
+				sources/color.c \
+				sources/parsing_color.c \
+				sources/msg.c \
+				sources/mandelbrot.c \
+				sources/julia.c \
+				sources/color_interpolated.c \
+				sources/fractol.c \
+				sources/more_color.c \
+				sources/striped_color.c \
 
-LIBFT_PATH	= libft/
-LIBFT_NAME	= libft.a
-LIBFT		= $(LIBFT_PATH)$(LIBFT_NAME)
-
-INC			=	-I ./includes/\
-				-I ./libft/\
-				-I ./minilibx/
-
-SRC_PATH	=	src/
-SRC			=	fractol.c \
-				init.c \
-				exit.c \
-				execution.c \
-				render.c \
-				color.c \
-				parsing_color.c \
-				msg.c \
-				mandelbrot.c \
-				julia.c \
-				color_interpolated.c \
-SRCS		= $(addprefix $(SRC_PATH), $(SRC))
-
-OBJ_PATH	= obj/
 OBJ			= $(SRC:.c=.o)
-OBJS		= $(addprefix $(OBJ_PATH), $(OBJ))
 
+INCLUDE = -L ./libft -lft
+INCLUDE_1 = -L ./minilibx -lft
 all: $(MLX) $(LIBFT) $(NAME)
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+.c.o:
+	${CC} -c $< -o ${<:.c=.o}
 
-$(OBJS): $(OBJ_PATH)
+${NAME}: ${OBJ}
+	make -C $(LIBFT)
+	make -C $(MLX)
+	${CC} ${FLAGS} ${OBJ} -o ${NAME} ${INCLUDE}
 
-$(OBJ_PATH):
-	@mkdir $(OBJ_PATH)
-	@mkdir $(OBJ_PATH)fractal_sets/
-	@mkdir $(OBJ_PATH)color_schemes/
-
-$(MLX):
-	@echo "Making MiniLibX..."
-	@make -sC $(MLX_PATH)
-
-$(LIBFT):
-	@echo "Making libft..."
-	@make -sC $(LIBFT_PATH)
-
-$(NAME): $(OBJS)
-	@echo "Compiling fractol..."
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT) $(INC) -lXext -lX11 -lm
-	@echo "Fractol ready."
-
-bonus: all
+all: ${NAME}
 
 clean:
-	@echo "Removing .o object files..."
-	@rm -rf $(OBJ_PATH)
-	@make clean -C $(MLX_PATH)
-	@make clean -C $(LIBFT_PATH)
+	${RM} ${OBJ_1} ${NAME}
+	@cd $(LIBFT) && $(MLX) && $(MAKE) clean
 
 fclean: clean
-	@echo "Removing fractol..."
-	@rm -f $(NAME)
-	@rm -f $(LIBFT_PATH)$(LIBFT_NAME)
+	${RM} ${NAME}
+	@cd $(LIBFT) && $(MLX) && $(MAKE) fclean
 
-re: fclean all
+re: clean all
 
-.PHONY: all re clean fclean
+.PHONY: all clean fclean re

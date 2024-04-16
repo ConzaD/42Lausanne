@@ -6,11 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:17:48 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/11 16:19:13 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:32:24 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 void	clean_exit(int exit_code, t_fractol *f)
 {
