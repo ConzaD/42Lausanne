@@ -6,7 +6,7 @@
 #    By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:34:34 by dconza            #+#    #+#              #
-#    Updated: 2024/04/16 10:41:34 by dconza           ###   ########.fr        #
+#    Updated: 2024/04/16 11:01:47 by dconza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRC			=	sources/init.c \
 				sources/msg.c \
 				sources/mandelbrot.c \
 				sources/julia.c \
-				sources/color_interpolated.c \
+				sources/color_interpolation.c \
 				sources/fractol.c \
 				sources/more_color.c \
 				sources/striped_color.c \
@@ -43,19 +43,19 @@ all: $(MLX) $(LIBFT) $(NAME)
 	${CC} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJ}
-	make -C $(LIBFT)
-	make -C $(MLX)
+	make -sC $(LIBFT)
+	make -sC $(MLX)
 	${CC} ${FLAGS} ${OBJ} -o ${NAME} ${INCLUDE}
 
 all: ${NAME}
 
 clean:
-	${RM} ${OBJ_1} ${NAME}
-	@cd $(LIBFT) && $(MLX) && $(MAKE) clean
+	${RM} ${OBJ} ${NAME}
+	@cd $(LIBFT) && $(MAKE) clean
 
 fclean: clean
 	${RM} ${NAME}
-	@cd $(LIBFT) && $(MLX) && $(MAKE) fclean
+	@cd $(LIBFT) && $(MAKE) fclean
 
 re: clean all
 

@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:17:48 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 10:32:24 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:52:05 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,7 @@ void	clean_exit(int exit_code, t_fractol *f)
 	if (f->win && f->mlx)
 		mlx_destroy_window(f->mlx, f->win);
 	if (f->mlx)
-	{
-		mlx_loop_end(f->mlx);
-		mlx_destroy_display(f->mlx);
 		free(f->mlx);
-	}
 	exit(exit_code);
 }
 

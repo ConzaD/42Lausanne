@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:18:50 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/17 23:22:13 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:55:41 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_isspace(int c);
+int	ft_ishexdigit(int c);
 
 #endif

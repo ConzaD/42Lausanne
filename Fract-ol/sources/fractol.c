@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:49:32 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 10:32:26 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:59:14 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	main(int ac, char **av)
 	render(&f);
 	print_controls();
 	mlx_hook(f.win, EVENT_CLOSE_BTN, 0, end_fractol, &f);
-	mlx_key_hook(f.win, key_event, &f);
-	mlx_mouse_hook(f.win, mouse_event, &f);
+	mlx_key_hook(f.win, keyboard_exec, &f);
+	mlx_mouse_hook(f.win, mouse_exec, &f);
 	mlx_loop(f.mlx);
 }

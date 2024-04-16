@@ -6,11 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:38:05 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 10:38:16 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:59:35 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 void	set_color_opposites(t_fractol *f, int color)
 {

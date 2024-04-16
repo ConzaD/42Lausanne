@@ -6,11 +6,11 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:39:07 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 10:39:38 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:59:38 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static void	fill_color_stripe(t_fractol *f, int color, int stripe)
 {
