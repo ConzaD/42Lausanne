@@ -6,7 +6,7 @@
 #    By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:34:34 by dconza            #+#    #+#              #
-#    Updated: 2024/01/12 19:36:01 by dconza           ###   ########.fr        #
+#    Updated: 2024/03/31 11:55:47 by dconza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME	= fractol
 CC		= gcc
 CFLAGS	= -Werror -Wextra -Wall
 
+# A corriger
 MLX_PATH	= minilibx-linux/
+#
 MLX_NAME	= libmlx.a
 MLX			= $(MLX_PATH)$(MLX_NAME)
 
@@ -25,6 +27,7 @@ LIBFT		= $(LIBFT_PATH)$(LIBFT_NAME)
 
 INC			=	-I ./includes/\
 				-I ./libft/\
+				# A corriger
 				-I ./minilibx-linux/
 
 
