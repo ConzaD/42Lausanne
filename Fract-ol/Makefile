@@ -6,7 +6,7 @@
 #    By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:34:34 by dconza            #+#    #+#              #
-#    Updated: 2024/03/31 11:55:47 by dconza           ###   ########.fr        #
+#    Updated: 2024/04/16 10:03:55 by dconza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,7 @@ NAME	= fractol
 CC		= gcc
 CFLAGS	= -Werror -Wextra -Wall
 
-# A corriger
-MLX_PATH	= minilibx-linux/
-#
+MLX_PATH	= minilibx/
 MLX_NAME	= libmlx.a
 MLX			= $(MLX_PATH)$(MLX_NAME)
 
@@ -27,15 +25,22 @@ LIBFT		= $(LIBFT_PATH)$(LIBFT_NAME)
 
 INC			=	-I ./includes/\
 				-I ./libft/\
-				# A corriger
-				-I ./minilibx-linux/
-
+				-I ./minilibx/
 
 SRC_PATH	=	src/
-SRC			=
+SRC			=	fractol.c \
+				init.c \
+				exit.c \
+				execution.c \
+				render.c \
+				color.c \
+				parsing_color.c \
+				msg.c \
+				mandelbrot.c \
+				julia.c \
+				color_interpolated.c \
 SRCS		= $(addprefix $(SRC_PATH), $(SRC))
 
-# Objects
 OBJ_PATH	= obj/
 OBJ			= $(SRC:.c=.o)
 OBJS		= $(addprefix $(OBJ_PATH), $(OBJ))
@@ -65,6 +70,7 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT) $(INC) -lXext -lX11 -lm
 	@echo "Fractol ready."
 
+bonus: all
 
 clean:
 	@echo "Removing .o object files..."
