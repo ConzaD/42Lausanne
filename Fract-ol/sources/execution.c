@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:47:31 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/11 16:16:51 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 09:55:30 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	keyboard_exec_extend(int keycode, t_fractol *mlx)
 		mlx->set = JULIA;
 	else
 		return (1);
-	//get_complex_layout(mlx);
+	get_layout(mlx);
 	render(mlx);
 	return (0);
 }
