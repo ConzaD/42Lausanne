@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:48:47 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/11 16:08:33 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/16 10:15:31 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,55 @@ int	mandelbrot(double cr, double ci);
 int	julia(t_fractol *f, double zr, double zi);
 
 //execution
+static void	zoom(t_fractol *f, double zoom);
+static int	keyboard_exec_extend(int keycode, t_fractol *mlx);
+static void	move(t_fractol *f, double distance, char direction);
 int	keyboard_exec(int keycode, t_fractol *mlx);
 int	mouse_exec(int keycode, int x, int y, t_fractol *mlx);
+
+//color interpolation
+static int	interpolate(int startcolor, int endcolor, double fraction);
+void	set_color_multiple(t_fractol *f, int colors[4], int n);
+void	set_color_mono(t_fractol *f, int color);
+
+//color
+static void	color_shift_special(t_fractol *f);
+static void	color_shift_striped(t_fractol *f);
+void	color_shift(t_fractol *f);
+
+//exit
+void	clean_exit(int exit_code, t_fractol *f);
+int	msg(char *str1, char *str2, int err_no);
+int	end_fractol(t_fractol *mlx);
+
+//init
+void	init(t_fractol *f);
+void	reinit_img(t_fractol *f);
+static void	init_img(t_fractol *f);
+void	get_layout(t_fractol *f);
+void	clean_init(t_fractol *f);
+
+//msg
+void print_fractal_options(void);
+void print_color_options(void);
+void	print_controls(void);
+void	help_msg(t_fractol *f);
+
+//parsing color
+static int	skip_space_sign_0x(char *color);
+static int	ft_atoi_color(t_fractol *f, char *color);
+void	get_color(t_fractol *f, int ac, char **av);
+static int	skip_space_sign(char *str, int *is_neg);
+double	ft_atoif(char *str);
+
+//render
+static void	set_pixel_color(t_fractol *f, int x, int y, int color);
+static int	calculate_fractal(t_fractol *f, double pr, double pi);
+void	render(t_fractol *f);
+
+//fractol
+static int	type_cmp(char *av, char *str, char c, char n);
+static void	get_set(t_fractol *f, char **av);
+static void	get_julia_starting_values(t_fractol *f, int ac, char **av);
+static void	handle_args(t_fractol *f, int ac, char **av);
+int	main(int ac, char **av);
