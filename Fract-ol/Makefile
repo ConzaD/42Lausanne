@@ -6,83 +6,57 @@
 #    By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:34:34 by dconza            #+#    #+#              #
-#    Updated: 2024/04/17 15:20:14 by dconza           ###   ########.fr        #
+#    Updated: 2024/04/17 15:55:25 by dconza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= fractol
-OS		= $(shell uname)
 
-# directories
-SRCDIR	= ./sources
-INCDIR	= ./includes
-OBJDIR	= ./obj
-
-SRC			=	init.c \
-				exit.c \
-				execution.c \
-				render.c \
-				color.c \
-				parsing_color.c \
-				msg.c \
-				mandelbrot.c \
-				julia.c \
-				color_interpolation.c \
-				fractol.c \
-				more_color.c \
-				striped_color.c \
-				$(addprefix fractals/,$(shell ls $(SRCDIR)/fractals | grep -E ".+\.c"))
-
-OBJ		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
-
-# compiler
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Werror -Wextra -Wall
+MLX	= minilibx/
+LIBFT	= libft/
+OBJ_DIR = obj/
+SRC_DIR = srcs/
 
+SRC			=	sources/init.c \
+				sources/exit.c \
+				sources/execution.c \
+				sources/render.c \
+				sources/color.c \
+				sources/parsing_color.c \
+				sources/msg.c \
+				sources/mandelbrot.c \
+				sources/julia.c \
+				sources/color_interpolation.c \
+				sources/fractol.c \
+				sources/more_color.c \
+				sources/striped_color.c \
 
-# mlx library
-ifeq ($(OS), Linux)
-	MLX		= ./miniLibX_X11/
-	MLX_LNK	= -L $(MLX) -l mlx -lXext -lX11
-else
-	MLX		= ./miniLibX/
-	MLX_LNK	= -L $(MLX) -l mlx -framework OpenGL -framework AppKit
-endif
+OBJ			= $(SRC:.c=.o)
 
-MLX_INC	= -I $(MLX)
-MLX_LIB	= $(addprefix $(MLX),mlx.a)
+INCLUDE = -L ./libft -lft
+INCLUDE_1 = -L ./minilibx -l mlx -framework OpenGL -framework AppKit
+all: $(MLX) $(LIBFT) $(NAME)
 
-# ft library
-FT		= ./libft/
-FT_LIB	= $(addprefix $(FT),libft.a)
-FT_INC	= -I ./libft
-FT_LNK	= -L ./libft -l ft -l pthread
+.c.o:
+	${CC} -c $< -o ${<:.c=.o}
 
-all: obj $(FT_LIB) $(MLX_LIB) $(NAME)
+${NAME}: ${OBJ}
+	make -C $(LIBFT)
+	make -C $(MLX)
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME} ${INCLUDE} $(INCLUDE_1)
 
-obj:
-	mkdir -p $(OBJDIR)
-	mkdir -p $(OBJDIR)/fractals
-
-$(OBJDIR)/%.o:$(SRCDIR)/%.c
-	$(CC) $(CFLAGS) $(MLX_INC) $(FT_INC) -I $(INCDIR) -o $@ -c $<
-
-$(FT_LIB):
-	@make -C $(FT)
-
-$(MLX_LIB):
-	@make -C $(MLX)
-
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) $(MLX_LNK) $(FT_LNK) -lm -o $(NAME)
+all: ${NAME}
 
 clean:
-	rm -rf $(OBJDIR)
-	make -C $(FT) clean
-	make -C $(MLX) clean
+	${RM} ${OBJ} ${NAME}
+	@cd $(LIBFT) $(MLX) && $(MAKE) clean
 
 fclean: clean
-	rm -rf $(NAME)
-	make -C $(FT) fclean
+	${RM} ${NAME}
+	@cd $(LIBFT)  && $(MAKE) fclean
 
-re: fclean all
+re: clean all
+
+.PHONY: all clean fclean re

@@ -6,11 +6,12 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:49:32 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/16 10:59:14 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/17 16:20:55 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+#include "../includes/keys.h"
 
 static int	type_cmp(char *av, char *str, char c, char n)
 {

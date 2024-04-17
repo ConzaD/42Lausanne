@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 19:37:47 by dconza            #+#    #+#             */
-/*   Updated: 2024/01/12 19:37:49 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/17 16:25:23 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define EVENT_CLOSE_BTN 17
 # define KEY_ESC 65307
-# define KEY_W 119
+# define KEY_W 'w'
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
@@ -28,11 +28,8 @@
 # define KEY_SPACE 32
 # define KEY_ONE 49
 # define KEY_TWO 50
-# define KEY_THREE 51
-# define KEY_FOUR 52
-# define KEY_FIVE 53
-# define MOUSE_WHEEL_UP 4
-# define MOUSE_WHEEL_DOWN 5
+# define MOUSE_WHEEL_UP 5
+# define MOUSE_WHEEL_DOWN 4
 # define MOUSE_WHEEL_BTN 3
 # define MOUSE_BTN 1
 # define MOUSE_BTN_2 3
