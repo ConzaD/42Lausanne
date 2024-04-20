@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:48:47 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/17 15:46:47 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/20 15:44:04 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 # include <stdio.h>
 # include <math.h>
 
-# define WIDTH 900
-# define HEIGHT 900
-# define MAX_ITERATIONS 60
+# define WIDTH 1080
+# define HEIGHT 720
+# define MAX_ITERATIONS 400
 
 # define MANDELBROT 1
 # define JULIA 2
