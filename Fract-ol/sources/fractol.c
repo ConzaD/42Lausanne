@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:49:32 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/17 16:20:55 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/20 14:32:09 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int	main(int ac, char **av)
 {
 	t_fractol	f;
 
+	clean_init(&f);
 	if (ac < 2)
 		help_msg(&f);
 	clean_init(&f);
