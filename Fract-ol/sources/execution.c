@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:47:31 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/17 16:29:18 by dconza           ###   ########.fr       */
+/*   Updated: 2024/04/20 15:50:07 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ static void	zoom(t_fractol *f, double zoom)
 	f->min_i = f->min_i + (center_i - zoom * center_i) / 2;
 	f->max_i = f->min_i + zoom * center_i;
 }
-
-
 
 static int	keyboard_exec_extend(int keycode, t_fractol *mlx)
 {
