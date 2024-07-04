@@ -6,45 +6,59 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:21:47 by dconza            #+#    #+#             */
-/*   Updated: 2024/04/25 18:39:07 by dconza           ###   ########.fr       */
+/*   Updated: 2024/07/04 17:28:19 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO.H
-# define PHILO.H
+#ifndef PHILO_H
+# define PHILO_H
 
-# include <unistd.h>
-# include <stdio.h>
 # include <pthread.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdbool.h>
+# include <sys/time.h>
+# include <limits.h>
 
-typedef  struct  s_philo
- { fil
+typedef struct l_philo
+{
+	int				n;
+	int				m_count;
+	bool			is_eating;
 	pthread_t		thread;
-	identifiant int				;
-	manger 				;
-	int 				repas_mangés ;
-	size_t 			dernier_repas ;
-	size_t 			time_to_die ;
-	size_t 			time_to_eat ;
-	size_t 			time_to_sleep ;
-	size_t 			start_time ;
-	int 				num_of_philos;
-	int 				num_times_to_eat;
-	int 				*mort;
-	pthread_mutex_t 	*r_fork;
-	pthread_mutex_t 	*l_fork;
-	pthread_mutex_t 	*write_lock;
-	pthread_mutex_t 	*dead_lock;
-	pthread_mutex_t 	*meal_lock;
-} t_philo;
+	long int		last_eat;
+	struct l_info	*info;
+	pthread_mutex_t	*fork_r;
+	pthread_mutex_t	fork_l;
+}		t_philo;
 
-typedef  struct  s_program
- {
-	int 				dead_flag;
-	pthread_mutex_t 	dead_lock;
-	pthread_mutex_t 	repas_lock;
-	pthread_mutex_t 	write_lock;
-	t_philo *philos;
-} t_programme ;
+typedef struct l_info
+{
+	int				philo_eat;
+	int				n_philo;
+	int				t_die;
+	int				t_eat;
+	int				t_sleep;
+	int				n_eat;
+	int				stop;
+	long int		t_start;
+	t_philo			*philo;
+	pthread_mutex_t	print;
+	pthread_mutex_t	m_stop;
+	pthread_mutex_t	m_eat;
+	pthread_mutex_t	dead;
+}		t_info;
+
+void		ft_usleep(int ms);
+int			philo_init(t_info *data);
+void		*philo_life(void *philo);
+long long	timestamp(void);
+int			var_init(t_info *data, char **av);
+void		*philo_life(void *phi);
+void		print(t_philo *philo, char *str);
+int			is_dead(t_philo *philo, int nb);
+int			ft_isdigit(int character);
+int			ft_atoi(const char *str);
 
 #endif
