@@ -6,15 +6,15 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:29:53 by dconza            #+#    #+#             */
-/*   Updated: 2023/10/17 20:14:05 by dconza           ###   ########.fr       */
+/*   Updated: 2024/07/05 10:35:33 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int a)
+int	ft_isdigit(int character)
 {
-	if ((a >= 48 && a <= 57))
+	if (character >= '0' && character <= '9')
 		return (1);
 	return (0);
 }

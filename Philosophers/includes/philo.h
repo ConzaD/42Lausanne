@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:21:47 by dconza            #+#    #+#             */
-/*   Updated: 2024/07/04 17:28:19 by dconza           ###   ########.fr       */
+/*   Updated: 2024/07/05 10:16:50 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdbool.h>
 # include <sys/time.h>
 # include <limits.h>
+# include "../libft/libft.h"
 
 typedef struct l_philo
 {
@@ -58,7 +59,5 @@ int			var_init(t_info *data, char **av);
 void		*philo_life(void *phi);
 void		print(t_philo *philo, char *str);
 int			is_dead(t_philo *philo, int nb);
-int			ft_isdigit(int character);
-int			ft_atoi(const char *str);
 
 #endif
