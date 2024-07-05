@@ -6,11 +6,12 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 17:29:05 by dconza            #+#    #+#             */
-/*   Updated: 2024/07/04 17:31:01 by dconza           ###   ########.fr       */
+/*   Updated: 2024/07/05 14:20:53 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
+
 void	freeall(t_info *data)
 {
 	int	i;

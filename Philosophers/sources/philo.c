@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:22:06 by dconza            #+#    #+#             */
-/*   Updated: 2024/07/05 11:44:53 by dconza           ###   ########.fr       */
+/*   Updated: 2024/07/05 14:20:36 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ void	*check_death(void *phi)
 void	take_fork(t_philo *philo)
 {
 	pthread_mutex_lock(&(philo->fork_l));
-	printf("%lld %d has taken a fork\n", timestamp(), philo->n);;
+	printf("%lld %d has taken a fork\n", timestamp(), philo->n);
 	if (philo->info->n_philo == 1)
 	{
 		ft_usleep(philo->info->t_die * 2);
 		return ;
 	}
 	pthread_mutex_lock((philo->fork_r));
-	printf("%lld %d has taken a fork\n", timestamp(), philo->n);;
+	printf("%lld %d has taken a fork\n", timestamp(), philo->n);
 }
 
 void	philo_eat(t_philo *philo)
 {
-	 printf("%lld %d is eating\n", timestamp(), philo->n);
+	printf("%lld %d is eating\n", timestamp(), philo->n);
 	pthread_mutex_lock(&(philo->info->m_eat));
 	philo->last_eat = timestamp();
 	philo->m_count++;

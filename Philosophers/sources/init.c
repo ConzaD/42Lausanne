@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 17:26:50 by dconza            #+#    #+#             */
-/*   Updated: 2024/07/05 10:54:07 by dconza           ###   ########.fr       */
+/*   Updated: 2024/07/05 14:18:26 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	check_num(char **str)
 	return (0);
 }
 
-int var_init(t_info *data, char **av)
+int	var_init(t_info *data, char **av)
 {
 	if (check_num(av))
 		return (1);
@@ -55,7 +55,7 @@ int var_init(t_info *data, char **av)
 	return (0);
 }
 
-int philo_init(t_info *data)
+int	philo_init(t_info *data)
 {
 	int i;
 
@@ -80,10 +80,8 @@ int philo_init(t_info *data)
 	}
 	i = 0;
     while (i < data->n_philo)
-	{
 		if (pthread_join(data->philo[i].thread, NULL) != 0)
 			return (-1);
 		i++;
-	}
 	return (0);
 }
