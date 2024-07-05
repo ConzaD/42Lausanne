@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:22:06 by dconza            #+#    #+#             */
-/*   Updated: 2024/07/04 17:31:06 by dconza           ###   ########.fr       */
+/*   Updated: 2024/07/05 11:44:53 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*check_death(void *phi)
 	{
 		pthread_mutex_unlock(&philo->info->m_eat);
 		pthread_mutex_unlock(&philo->info->m_stop);
-		print(philo, " died\n");
+		printf("%lld %d died\n", timestamp(), philo->n);
 		is_dead(philo, 1);
 	}
 	pthread_mutex_unlock(&philo->info->m_eat);
@@ -36,19 +36,19 @@ void	*check_death(void *phi)
 void	take_fork(t_philo *philo)
 {
 	pthread_mutex_lock(&(philo->fork_l));
-	print(philo, " has taken a fork\n");
+	printf("%lld %d has taken a fork\n", timestamp(), philo->n);;
 	if (philo->info->n_philo == 1)
 	{
 		ft_usleep(philo->info->t_die * 2);
 		return ;
 	}
 	pthread_mutex_lock((philo->fork_r));
-	print(philo, " has taken a fork\n");
+	printf("%lld %d has taken a fork\n", timestamp(), philo->n);;
 }
 
 void	philo_eat(t_philo *philo)
 {
-	print(philo, " is eating\n");
+	 printf("%lld %d is eating\n", timestamp(), philo->n);
 	pthread_mutex_lock(&(philo->info->m_eat));
 	philo->last_eat = timestamp();
 	philo->m_count++;
@@ -56,9 +56,9 @@ void	philo_eat(t_philo *philo)
 	ft_usleep(philo->info->t_eat);
 	pthread_mutex_unlock((philo->fork_r));
 	pthread_mutex_unlock(&(philo->fork_l));
-	print(philo, " is sleeping\n");
+	printf("%lld %d is sleeping\n", timestamp(), philo->n);
 	ft_usleep(philo->info->t_sleep);
-	print(philo, " is thinking\n");
+	printf("%lld %d is thinking\n", timestamp(), philo->n);
 }
 
 void	*philo_life(void *phi)
