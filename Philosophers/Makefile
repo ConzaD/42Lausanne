@@ -6,7 +6,7 @@
 #    By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/25 18:21:18 by dconza            #+#    #+#              #
-#    Updated: 2024/07/05 10:32:32 by dconza           ###   ########.fr        #
+#    Updated: 2024/07/07 15:03:14 by dconza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME	= philo
 
 CC		= gcc
 LIBFT	= libft/
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 OBJ_DIR = obj/
 SRC_DIR = srcs/
 
