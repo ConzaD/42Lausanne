@@ -6,7 +6,7 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:22:06 by dconza            #+#    #+#             */
-/*   Updated: 2024/09/06 20:48:05 by dconza           ###   ########.fr       */
+/*   Updated: 2024/09/09 14:16:46 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,44 +33,21 @@ void	*check_death(void *phi)
 	return (NULL);
 }
 
-void take_fork(t_philo *philo)
+void	take_fork(t_philo *philo)
 {
-    // Vérification si le philosophe est mort avant de prendre la fourchette gauche
-    pthread_mutex_lock(&(philo->info->m_stop));
-    if (is_dead(philo, 0)) {
-        pthread_mutex_unlock(&(philo->info->m_stop));
-        return;
-    }
-    pthread_mutex_unlock(&(philo->info->m_stop));
-
-    // Prendre la fourchette gauche
-    pthread_mutex_lock(&(philo->fork_l));
-    printf("%lld %d has taken a fork\n", timestamp(), philo->n);
-
-    // Vérification si le philosophe est mort avant de prendre la fourchette droite
-    pthread_mutex_lock(&(philo->info->m_stop));
-    if (is_dead(philo, 0)) {
-        pthread_mutex_unlock(&(philo->info->m_stop));
-        pthread_mutex_unlock(&(philo->fork_l)); // Débloquer la fourchette gauche si mort
-        return;
-    }
-    pthread_mutex_unlock(&(philo->info->m_stop));
-
-    // Prendre la fourchette droite
-    pthread_mutex_lock((philo->fork_r));
-    printf("%lld %d has taken a fork\n", timestamp(), philo->n);
+	pthread_mutex_lock(&(philo->fork_l));
+	printf("%lld %d has taken a fork\n", timestamp(), philo->n);
+	if (philo->info->n_philo == 1)
+	{
+		ft_usleep(philo->info->t_die * 2);
+		return ;
+	}
+	pthread_mutex_lock((philo->fork_r));
+	printf("%lld %d has taken a fork\n", timestamp(), philo->n);
 }
-
-
 
 void	philo_eat(t_philo *philo)
 {
-	pthread_mutex_lock(&(philo->info->m_stop));
-	if (is_dead(philo, 0)) {
-		pthread_mutex_unlock(&(philo->info->m_stop));
-		return;
-	}
-	pthread_mutex_unlock(&(philo->info->m_stop));
 	printf("%lld %d is eating\n", timestamp(), philo->n);
 	pthread_mutex_lock(&(philo->info->m_eat));
 	philo->last_eat = timestamp();
