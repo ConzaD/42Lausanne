@@ -6,15 +6,17 @@
 /*   By: dconza <dconza@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 17:29:05 by dconza            #+#    #+#             */
-/*   Updated: 2024/09/09 14:37:01 by dconza           ###   ########.fr       */
+/*   Updated: 2024/09/09 17:01:57 by dconza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-int is_valid_positive_number(char *str)
+int	is_valid_positive_number(char *str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	if (!str[i])
 		return (0);
 	while (str[i])
@@ -48,18 +50,16 @@ void	freeall(t_info *data)
 int	main(int ac, char **av)
 {
 	t_info	data;
+	int		i;
+
+	i = 1;
 	if (ac != 5 && ac != 6)
-	{
-		printf("Error: invalid number of arguments.\n");
 		return (1);
-	}
-	for (int i = 1; i < ac; i++)
+	while (i < ac)
 	{
 		if (!is_valid_positive_number(av[i]))
-		{
-			printf("Error: invalid argument %d, must be a positive number.\n", i);
 			return (1);
-		}
+		i++;
 	}
 	if (var_init(&data, av) == 1)
 	{
